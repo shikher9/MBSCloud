@@ -1,7 +1,5 @@
 (function () {
 
-    
-
     var app = angular.module('sensorDataModule');
 
     app.controller('sensorDataController', ['$http', '$scope', function ($http, $scope) {

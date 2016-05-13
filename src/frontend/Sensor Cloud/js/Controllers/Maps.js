@@ -1,4 +1,15 @@
-
+angular
+.module('sensorDataModule')
+.controller('GoogleMapLocController', GoogleMapLocController);
+GoogleMapLocController.$inject = ['$scope', 'CustomMapPointService'];
+function GoogleMapLocController($scope, CustomMapPointService){
+	$scope.setCurrentCoordinates = function(lat,lng){
+		
+		// setting coordinates for sharing
+		$scope.lat = CustomMapPointService.setLat(lat);
+		$scope.lng = CustomMapPointService.setLng(lng);	
+	}
+}
 
 if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
@@ -26,3 +37,5 @@ function successFunction(position) {
 function errorFunction(){
     alert("Geocoder failed");
 }
+
+
